@@ -16,4 +16,4 @@ Use the following line within the document preamble to determine if compilation 
 
 \end{document}
 ```
-This file automatically loads the other files in this repository.  Each file contains command descriptions and arguments to guide use.
+This file automatically loads the other files in this repository.  Each file contains command descriptions and arguments to guide use.  I will do my best to not change command names and arguments to maintain backwards compatibility as much as possible.
