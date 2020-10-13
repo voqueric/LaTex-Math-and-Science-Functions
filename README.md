@@ -1,6 +1,6 @@
 # LaTex-Math-and-Science-Functions
 
-Use the following line within the document preamble to determine if compilation take place in a Linux operating system or Windows operating system:
+Use the following line within the document preamble to determine if compilation takes place in a Linux operating system or Windows operating system:
 
 ```
 \documentclass[letterpaper,10pt]{article}
