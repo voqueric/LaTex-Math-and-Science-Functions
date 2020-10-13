@@ -1,0 +1,179 @@
+% LaTeX Algebra Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 11--Geometry.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mgptri/igptri
+% Math - Geom - Perimeter of Triangle
+%
+%   P = a + b + c
+%
+%   arg a: side a
+%   arg b: side b
+%   arg c: side c
+\newcommand{ \mgptri }[3]{ #1 + #2 + #3 }
+\newcommand{ \igptri }[3]{ \aptri{ #1 }{ #2 }{ #3 } }
+
+
+% mghftrif/ighftrif
+% Math - Geom - Herons Formula Full
+%
+%         P   P        P        P
+%   A = [ - ( - - a )( - - b )( - - c ) ]^(1/2)
+%         2   2        2        2
+%
+%   arg P: perimeter
+%   arg a: side a
+%   arg b: side b
+%   arg c: side c
+\newcommand{ \mghftrif }[4]{ \Bigg[ \dfrac{ { #1 }_{ #2 #3 #4 } }{ 2 } \bigg( \dfrac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #2 \bigg) \bigg( \dfrac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #3 \bigg) \bigg( \dfrac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #3 \bigg) \Bigg]^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \ighftrif }[4]{ [ \frac{ { #1 }_{ #2 #3 #4 } }{ 2 } ( \frac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #2 ) ( \frac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #3 ) ( \frac{ { #1 }_{ #2 #3 #4 } }{ 2 } - #3 ) ]^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mghftric/ighftric
+% Math - Geom - Herons Formula Compact
+%
+%   A = [ S ( S - side1 )( S - side2 )( S - side3 ) ]^(1/2): S = P_abc / 2
+%
+%   arg S: perimeter / 2
+%   arg P: perimeter
+%   arg a: side a
+%   arg b: side b
+%   arg c: side c
+\newcommand{ \mghftric }[5]{ \big[ #1 ( #1 - #3 )( #1 - #4 )( #1 - #5 ) \big]^{ \sfrac{ 1 }{ 2 } }: \qquad #1 = \dfrac{ { #2 }_{ #3 #4 #5 } }{ 2 } }
+\newcommand{ \ighftric }[5]{ [ #1 ( #1 - #3 )( #1 - #4 )( #1 - #5 ) ]^{ \sfrac{ 1 }{ 2 } }: \qquad #1 = \sfrac{ { #2 }_{ #3 #4 #5 } }{ 2 } }
+
+
+% mgartri/igartri
+% Math - Geom - Area of Right-Triangle
+%
+%       1
+%   A = - bh
+%       2
+%
+%       1
+%   A = - hb
+%       2
+%
+%   arg b: base      alt-arg h: height
+%   arg h: height    alt-arg b: base
+\newcommand{ \mgartri }[2]{ \dfrac{ 1 }{ 2 }{ #1 }{ #2 } }
+\newcommand{ \igartri }[2]{ \frac{ 1 }{ 2 }{ #1 }{ #2 } }
+
+
+% mgpts/igpts
+% Math - Geom - Pythagorean Theorem - Squared Form Sum
+%
+%   h^2 = a^2 + o^2
+%
+%   arg a: adjacent side
+%   arg o: opposite side
+\newcommand{ \mgpts }[2]{ { #1 }^2 + { #2 }^2 }
+\newcommand{ \igpts }[2]{ \mapts{ #1 }{ #2 } }
+
+
+% mgptsd/igptsd
+% Math - Geom - Pythagorean Theorem - Squared Form Difference
+%
+%   a^2 = h^2 - o^2
+%
+%   arg h: hypotenuse
+%   arg o: opposite side
+\newcommand{ \mgptsd }[2]{ { #1 }^2 - { #2 }^2 }
+\newcommand{ \igptsd }[2]{ \maptsd{ #1 }{ #2 } }
+
+
+% mgptr/igptr
+% Math - Geom - Pythagorean Theorem - Root Form Sum
+%
+%   h = (a^2 + o^2)^(1/2)
+%
+%   arg a: adjacent side
+%   arg o: opposite side
+\newcommand{ \mgptr }[2]{ ( { #1 }^2 + { #2 }^2 )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \igptr }[2]{ \maptr{ #1 }{ #2 } }
+
+
+% mgptrd/igptrd
+% Math - Geom - Pythagorean Theorem - Root Form Difference
+%
+%   a = (h^2 - o^2)^(1/2)
+%
+%   arg h: hypotenuse
+%   arg o: opposite side
+\newcommand{ \mgptrd }[2]{ ( { #1 }^2 - { #2 }^2 )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \igptrd }[2]{ \maptrd{ #1 }{ #2 } }

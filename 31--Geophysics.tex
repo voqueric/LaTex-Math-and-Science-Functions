@@ -1,0 +1,112 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 31--Geophysics.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mpgrn/ipgrn
+% Geophysics - Magma Displacement - Reynold's Number
+% 
+%         w r v
+%   R_e = -----
+%           e
+%
+\newcommand{ \mpgrn }[0]{ \dfrac{w \rho v_{max}}{\eta} }
+\newcommand{ \ipgrn }[0]{ \frac{w \rho v_{max}}{\eta} }
+
+
+% mpgnavs/ipgnavs
+% Geophysics - Magma Displacement - Navier Stoke's in Single Dimension
+% 
+%      d               d               d^2  
+%   r --- v(a, t) = - --- P(b, t) + e ----- v(a, t) + r g
+%     d t             d b             d a^2
+%
+%   arg a: velocity component variable
+%   arg b: pressure component variable
+\newcommand{ \mpgnavs }[2]{ - \mcpdelb{z}{}{P( #2 ,t)} + \eta \mcpdelb{x}{2}{v_z(#1,t)} + \rho g }
+\newcommand{ \ipgnavs }[2]{ - \icpdelb{z}{}{P( #2 ,t)} + \eta \icpdelb{x}{2}{v_z(#1,t)} + \rho g }
+
+
+% mpgnavsv/ipgnavsv
+% Geohysics - Magma Displacement - Navier Stoke's in Vector Form
+% 
+%      d  -                 -     -
+%   r --- v = - n P + e n^2 v + r g
+%     d t
+%
+\newcommand{ \mpgnavsv }[0]{ - \nabla P + \eta \nabla^2 \mvnteb{ v } + \rho \mvnteb{ g } }
+\newcommand{ \ipgnavsv }[0]{ - \nabla P + \eta \nabla^2 \ivnteb{ v } + \rho \ivnteb{ g } }

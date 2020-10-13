@@ -1,0 +1,647 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 14--Vector.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mcnteb/icnteb
+% Math - Vect - Vector Notation Bold Text
+%
+%   ->
+%   a
+%
+%   arg a: vector variable
+\newcommand{ \mvnteb }[1]{ \,\vec{ \mathbf{ #1 } } }
+\newcommand{ \ivnteb }[1]{ \mvnteb{ #1 } }
+
+
+% mcvntedb/ivntedb
+% Math - Vect - Vector Notation Differential with Bold Text
+%
+%     ->
+%   d a
+%
+%   arg a: vector variable
+\newcommand{ \mvntedb }[1]{ \,\vec{ \dif{ \mathbf{ #1 } } } }
+\newcommand{ \ivntedb }[1]{ \mvntedb{ #1 } }
+
+
+% mvntenb/ivntenb
+% Math - Vect - Vector Notation Bold Del Operator
+%
+%   ->
+%   n
+%
+%   no arguments
+\newcommand{ \mvntenb }[0]{ \,\vec{ \pmb{ \nabla } } }
+\newcommand{ \ivntenb }[0]{ \mvntenb{ } }
+
+
+% mvhatb/ivhatb
+% Math - Vect - Vector Notation Hat with Bold Text
+%
+%   ^
+%   a
+%
+%   arg a: unit vector
+\newcommand{ \mvhatb }[1]{ \,\hat{ \mathbf{ #1 } } }
+\newcommand{ \ivhatb }[1]{ \mvhatb{ #1 } }
+
+
+% mvhats/ivhats
+% Math - Vect - Vector Notation Hat with Script Text
+%
+%   ^
+%   a
+%
+%   arg a: unit vector
+\newcommand{ \mvhats }[1]{ \bhat{ \mcall{ #1 } } }
+\newcommand{ \ivhats }[1]{ \mvhats{ #1 } }
+
+
+% mvhatg/ivhatg
+% Math - Vect - Vector Notation Hat with Bold Greek
+%
+%   ^
+%   a
+%
+%   arg a: unit vector
+\newcommand{ \mvhatg }[1]{ \,\hat{ \pmb{ #1 } } }
+\newcommand{ \ivhatg }[1]{ \mvhatg{ #1 } }
+
+
+% mvdotgv/ivdotgv
+% Math - Vect - Vector Dot Product Geometric Definition using Vectors
+%
+%   ->  ->    ->    ->
+%   a * b = | a | | b | cos c
+%
+%   arg a: vector a
+%   arg b: vector b
+%   arg c: angle between vectors
+\newcommand{ \mvdotgv }[3]{ \vert \mvnteb{ #1 } \vert \vert \mvnteb{ #2 } \vert \cos{ #3 } }
+\newcommand{ \ivdotgv }[3]{ \mvdotgv{ #1 }{ #2 }{ #3 } }
+
+
+% mvdotgva/ivdotgva
+% Math - Vect - Vector Dot Product Geometric Definition using Vectors Angle Solution
+%
+%                 ->  ->
+%                 a * b
+%      cos c = -----------
+%                ->    ->
+%              | a | | b |
+%
+%   arg a: vector a
+%   arg b: vector b
+\newcommand{ \mvdotgva }[3]{ \dfrac{ \mvnteb{ #1 } \cdot \mvnteb{ #2 } }{ \vert \mvnteb{ #1 } \vert \vert \mvnteb{ #2 } } }
+\newcommand{ \ivdotgva }[3]{ \frac{ \ivnteb{ #1 } \cdot \ivnteb{ #2 } }{ \vert \ivnteb{ #1 } \vert \vert \ivnteb{ #2 } } }
+
+
+% mvdotgm/ivdotgm
+% Math - Vect - Vector Dot Product Geometric Definition using Vector Magnitudes
+%
+%   ->  ->
+%   a * b = a b cos c
+%
+%   arg a: magnitude vector a
+%   arg b: magnitude vector b
+%   arg c: angle between vectors
+\newcommand{ \mvdotgm }[3]{ { #1 }{ #2 } \cos{ #3 } }
+\newcommand{ \ivdotgm }[3]{ \mvdotgm{ #1 }{ #2 }{ #3 } }
+
+
+% mvcrsgv/ivcrsgv
+% Math - Vect - Vector Cross Product Geometric Definition using Vectors
+%
+%   ->  ->                        ^
+%   a x b = || a || || b || sin c n
+%
+%   arg a: magnitude vector a
+%   arg b: magnitude vector b
+%   arg c: angle between vectors
+\newcommand{ \mvcrsgv }[3]{ \vert #1 \vert \vert #2 \vert \sin{ #3 } \mvhatb{ n } }
+\newcommand{ \ivcrsgv }[3]{ \mvcrsgv{ #1 }{ #2 }{ #3 } }
+
+
+% mvcrsgm/ivcrsgm
+% Math - Vect - Vector Cross Product Geometric Definition using Vector Magnitudes
+%
+%   ->  ->            ^
+%   a x b = a b sin c n
+%
+%   arg a: magnitude vector a
+%   arg b: magnitude vector b
+%   arg c: angle between vectors
+\newcommand{ \mvcrsgm }[3]{ { #1 }{ #2 } \sin{ #3 } \mvhatb{ n } }
+\newcommand{ \ivcrsgm }[3]{ \mvcrsgm{ #1 }{ #2 }{ #3 } }
+    
+    
+% mvdeloneb/ivdeloneb
+% Math - Vect - Del Operator in One Dimension with Bold Text Hat
+%
+%   ^  d
+%   a ---
+%     d b
+%
+%   arg a: standard basis vector
+%   arg b: operator variable
+\newcommand{ \mvdeloneb }[2]{ \mvhatb{ #1 } \mcpdelb{ #2 }{ }{ } }
+\newcommand{ \ivdeloneb }[2]{ \ivhatb{ #1 } \icpdelb{ #2 }{ }{ } }
+
+
+% mvdeloneg/ivdeloneg
+% Math - Vect - Del Operator in One Dimension with Greek Text Hat
+%
+%   ^  d
+%   a ---
+%     d b
+%
+%   arg a: standard basis vector
+%   arg b: operator variable
+\newcommand{ \mvdeloneg }[2]{ \mvhatg{ #1 } \mcpdelb{ #2 }{ }{ } }
+\newcommand{ \ivdeloneg }[2]{ \ivhatg{ #1 } \icpdelb{ #2 }{ }{ } }
+
+
+% mvdeltwob/ivdeltwob
+% Math - Vect - Del Operator in Two Dimensions with Bold Text Hats
+%
+%   ^  d    ^  d
+%   a --- + b ---
+%     d c     d d
+%
+%   arg a: direction #1 unit vector
+%   arg b: direction #2 unit vector
+%   arg c: operator variable #1
+%   arg d: operator variable #2
+\newcommand{ \mvdeltwob }[4]{ \mvdeloneb{ #1 }{ #3 } + \mvdeloneb{ #2 }{ #4 } }
+\newcommand{ \ivdeltwob }[4]{ \ivdeloneb{ #1 }{ #3 } + \ivdeloneb{ #2 }{ #4 } }
+
+
+% mvdelthrb/ivdelthrb
+% Math - Vect - Del Operator in Three Dimensions with Bold Text Hats
+%
+%   ^  d    ^  d    ^  d
+%   a --- + b --- + c ---
+%     d d     d e     d f
+%
+%   arg a: direction #1 unit vector
+%   arg b: direction #2 unit vector
+%   arg c: direction #3 unit vector
+%   arg d: vector variable #1
+%   arg e: vector variable #2
+%   arg f: vector variable #3
+\newcommand{ \mvdelthrb }[6]{ \mvdeloneb{ #1 }{ #4 } + \mvdeloneb{ #2 }{ #5 } + \mvdeloneb{ #3 }{ #6 } }
+\newcommand{ \icdelthrb }[6]{ \ivdeloneb{ #1 }{ #4 } + \ivdeloneb{ #2 }{ #5 } + \ivdeloneb{ #3 }{ #6 } }
+
+
+% mvgcrtoneb/ivgcrtoneb
+% Math - Vect - Cartesian Gradient in One Dimension with Bold Text Hat
+%
+%    d    ^
+%   --- c a
+%   d b
+%
+%   arg a: unit vector
+%   arg b: operator variable
+%   arg c: function
+\newcommand{ \mvgcrtoneb }[3]{ \mcpdelb{ #2 }{ }{ } #3 \,\mvhatb{ #1 } }
+\newcommand{ \ivgcrtoneb }[3]{ \icpdelb{ #2 }{ }{ } #3 \,\ivhatb{ #1 } }
+
+
+% mvgcrtoneg/ivgcrtoneg
+% Math - Vect - Cartesian Gradient in One Dimension with Greek Text Hat
+%
+%    d    ^
+%   --- c a
+%   d b
+%
+%   arg a: unit vector
+%   arg b: operator variable
+%   arg c: function
+\newcommand{ \mvgcrtoneg }[3]{ \mcpdelb{ #2 }{ }{ } #3 \,\mvhatg{ #1 } }
+\newcommand{ \ivgcrtoneg }[3]{ \icpdelb{ #2 }{ }{ } #3 \,\ivhatg{ #1 } }
+
+
+% mvgcrttwob/ivgcrttwob
+% Math - Vect - Cartesian Gradient in Two Dimensions with Bold Text Hats
+%
+%    d    ^    d    ^
+%   --- d a + --- f b
+%   d c       d e
+%
+%   arg a: direction #1 unit vector
+%   arg b: direction #2 unit vector
+%   arg c: operator variable #1
+%   arg d: function #1
+%   arg e: operator variable #2
+%   arg f: function #2
+\newcommand{ \mvgcrttwob }[6]{ \mvgcrtoneb{ #1 }{ #3 }{ #4 } + \mvgcrtoneb{ #2 }{ #5 }{ #6 } }
+\newcommand{ \ivgcrttwob }[6]{ \ivgcrtoneb{ #1 }{ #3 }{ #4 } + \ivgcrtoneb{ #2 }{ #5 }{ #6 } }
+
+
+% mvgcrtthrb/ivgcrtthrb
+% Math - Vect - Cartesian Gradient in Three Dimensions with Bold Text Hats
+%
+%    d    ^    d    ^    d    ^
+%   --- e a + --- g b + --- i c
+%   d d       d f       d h
+%
+%   arg a: direction #1 unit vector
+%   arg b: direction #2 unit vector
+%   arg c: direction #3 unit vector
+%   arg d: operator variable #1
+%   arg e: function #1
+%   arg f: operator variable #2
+%   arg g: function #2
+%   arg h: operator variable #3
+%   arg i: function #3
+\newcommand{ \mvgcrtthrb }[9]{ \mvgcrtoneb{ #1 }{ #4 }{ #5 } + \mvgcrtoneb{ #2 }{ #6 }{ #7 } + \mvgcrtoneb{ #3 }{ #8 }{ #9 } }
+\newcommand{ \ivgcrtthrb }[9]{ \ivgcrtoneb{ #1 }{ #4 }{ #5 } + \ivgcrtoneb{ #2 }{ #6 }{ #7 } + \ivgcrtoneb{ #3 }{ #8 }{ #9 } }
+
+
+% mvdcrtone/ivdcrtone
+% Math - Vect - Cartesian Divergence in One Dimension
+%
+%    d
+%   --- b
+%   d a
+%
+%   arg a: operator variable #1
+%   arg b: component function #1
+\newcommand{ \mvdcrtone }[2]{ \mcpdelb{ #1 }{ }{ #2 } }
+\newcommand{ \ivdcrtone }[2]{ \icpdelb{ #1 }{ }{ #2 } }
+
+
+% mvdcrttwo/ivdcrttwo
+% Math - Vect - Cartesian Divergence in Two Dimensions
+%
+%    d       d
+%   --- b + --- d
+%   d a     d c
+%
+%   arg a: operator variable #1
+%   arg b: component function #1
+%   arg c: operator variable #2
+%   arg d: component function #2
+\newcommand{ \mvdcrttwo }[4]{ \mcpdelb{ #1 }{ }{ #2 } + \mcpdelb{ #3 }{ }{ #4 } }
+\newcommand{ \ivdcrttwo }[4]{ \icpdelb{ #1 }{ }{ #2 } + \icpdelb{ #3 }{ }{ #4 } }
+
+
+% mvdcrtthr/ivdcrtthr
+% Math - Vect - Cartesian Divergence in Three Dimensions
+%
+%    d       d       d
+%   --- b + --- d + --- f
+%   d a     d c     d e
+%
+%   arg a: operator variable #1
+%   arg b: component function #1
+%   arg c: operator variable #2
+%   arg d: component function #2
+%   arg e: operator variable #3
+%   arg f: component function #3
+\newcommand{ \mvdcrtthr }[6]{ \mcpdelb{ #1 }{ }{ #2 } + \mcpdelb{ #3 }{ }{ #4 } + \mcpdelb{ #5 }{ }{ #6 } }
+\newcommand{ \ivdcrtthr }[6]{ \icpdelb{ #1 }{ }{ #2 } + \icpdelb{ #3 }{ }{ #4 } + \icpdelb{ #5 }{ }{ #6 } }
+
+% mvccrttbl/ivccrttbl
+% Math - Vect - Curl Table
+%   
+%           | ^   ^   ^ |
+%           | a   b   c |
+%   ->  ->  |           |
+%   l x r = | d   e   f |
+%           |           |
+%           | g   h   i |
+%
+%   arg a: unit vector #1
+%   arg b: unit vector #2
+%   arg c: unit vector #3
+%
+%   arg d: left vector component #1
+%   arg e: left vector component #2
+%   arg f: left vector component #3
+%
+%   arg g: right vector component #1
+%   arg h: right vector component #2
+%   arg i: right vector component #3
+\newcommand{ \mvccrttbl }[9]{
+    \begin{vmatrix}
+        #1    & #2    & #3    \\
+        #4    & #5    & #6    \\
+        #7    & #8    & #9
+    \end{vmatrix}
+    }
+\newcommand{ \ivccrttbl }[9]{ \mvccrttbl{ #1 }{ #2 }{ #3 }{ #4 }{ #5 }{ #6 }{ #7 }{ #8 }{ #9 } }
+
+
+% mvccrtdet
+% Math - Vect - Curl Determinants
+%   
+%   ->  ->  | e   f | ^   | d   f | ^   | d   e | ^
+%   l x r = |       | a - |       | b + |       | c
+%           | h   i |     | g   i |     | g   h |
+%
+%   arg a: unit vector #1
+%   arg b: unit vector #2
+%   arg c: unit vector #3
+%
+%   arg d: left vector component #1
+%   arg e: left vector component #2
+%   arg f: left vector component #3
+%
+%   arg g: right vector component #1
+%   arg h: right vector component #2
+%   arg i: right vector component #3
+\newcommand{ \mvccrtdet }[9]{
+    \begin{vmatrix}
+        #5      & #6    \\
+        #8      & #9
+    \end{vmatrix} #1
+    - 
+    \begin{vmatrix}
+        #4      & #6    \\
+        #7      & #9
+    \end{vmatrix} #2
+    +
+    \begin{vmatrix}
+        #4      & #5    \\
+        #7      & #8
+    \end{vmatrix} #3
+    }
+    
+
+% ivccrtdet
+% Math - Vect - Curl Determinants
+%   
+%   ->  ->              ^               ^               ^  
+%   l x r = (e i - h f) a - (d i - g f) b + (d h - g e) c
+%
+%   arg a: unit vector #1
+%   arg b: unit vector #2
+%   arg c: unit vector #3
+%
+%   arg d: left vector component #1
+%   arg e: left vector component #2
+%   arg f: left vector component #3
+%
+%   arg g: right vector component #1
+%   arg h: right vector component #2
+%   arg i: right vector component #3
+\newcommand{ \ivccrtdet }[9]{ (#5 #9 - #8 #6){ #1 } - (#4 #9 - #7 #6){ #2 } + (#4 #8 - #7 #5){ #3 } }
+
+
+% mvlcrt/ivlcrt
+% Math - Vect - Cartesian Laplacian
+%
+%            d^2       d^2       d^2
+%   v^2 f = ----- d + ----- d + ----- d
+%           d^2 a     d^2 b     d^2 c
+%
+%   arg a: operator variable #1
+%   arg b: operator variable #2
+%   arg c: operator variable #3
+%   arg d: function
+\newcommand{ \mvlcrt }[4]{ \mcpdelb{ #1 }{ 2 }{ #4 } + \mcpdelb{ #2 }{ 2 }{ #4 } + \mcpdelb{ #3 }{ 2 }{ #4 } }
+\newcommand{ \ivlcrt }[4]{ \icpdelb{ #1 }{ 2 }{ #4 } + \icpdelb{ #2 }{ 2 }{ #4 } + \icpdelb{ #3 }{ 2 }{ #4 } }
+
+
+% mvgcylrad/ivgcylrad
+% Math - Vect - Cylindrical Gradient in Radial Direction
+%
+%    d    ^
+%   --- b a
+%   d a
+%
+%   arg a: radial variable and unit vector
+%   arg b: function
+\newcommand{ \mvgcylrad }[2]{ \mvgcrtoneb{ #1 }{ #1 }{ #2 } }
+\newcommand{ \ivgcylrad }[2]{ \ivgcrtoneb{ #1 }{ #1 }{ #2 } }
+
+
+% mvgcyllng/ivgcyllng
+% Math - Vect - Cylindrical Gradient in Longitudinal Direction
+%
+%   1  d    ^
+%   - --- c a
+%   b d a
+%
+%   arg a: latitudinal angular variable and unit vector (Greek Letter)
+%   arg b: radial variable
+%   arg c: function
+\newcommand{ \mvgcyllng }[3]{ \,\dfrac{ 1 }{ #2 } \mvgcrtoneg{ #1 }{ #1 }{ #3 } }
+\newcommand{ \ivgcyllng }[3]{ \,\frac{ 1 }{ #2 } \ivgcrtoneg{ #1 }{ #1 }{ #3 } }
+
+
+% mvgcylhgt/ivgcylhgt
+% Math - Vect - Cylindrical Gradient in Height Direction
+%
+%    d    ^
+%   --- b a
+%   d a
+%
+%   arg a: height variable and unit vector
+%   arg b: function
+\newcommand{ \mvgcylhgt }[2]{ \mvgcrtoneb{ #1 }{ #1 }{ #2 } }
+\newcommand{ \ivgcylhgt }[2]{ \ivgcrtoneb{ #1 }{ #1 }{ #2 } }
+
+
+% mvgcyl/ivgcyl
+% Math - Vect - Cylindrical Gradient Composite
+%
+%    d    ^   1  d    ^    d    ^
+%   --- d a + - --- d b + --- d c
+%   d a       b d b       d c
+%
+%   arg a: radial variable and unit vector
+%   arg b: longitudinal angular variable and unit vector (Greek Letter)
+%   arg c: height variable and unit vector
+%   arg d: gradient function
+\newcommand{ \mvgcyl }[4]{ \Big( \mvgcylrad{ #1 }{ #4 } + \mvgcyllng{ #2 }{ #1 }{ #4 } + \mvgcylhgt{ #3 }{ #4 } \Big) }
+\newcommand{ \ivgcyl }[4]{ ( \ivgcylrad{ #1 }{ #4 } + \ivgcyllng{ #2 }{ #1 }{ #4 } + \ivgcylhgt{ #3 }{ #4 } ) }
+
+
+% mvdifdcyl/ivdifdcyl
+% Mathematics - Vect - Displacement Differential for Cylindrical Integration
+%
+%           ^        ^      ^
+%   dt = da a + a db b + dc c
+%
+%   arg a: radial variable and unit vector
+%   arg b: longitudinal angular variable and unit vector (Greek Letter)
+%   arg c: height variable and unit vector
+\newcommand{ \mvdifdcyl }[3]{ \,\dif{ #1 } \mvhatb{ #1 } + #1 \,\dif{ #2 } \mvhatg{ #2 } + \,\dif{ #3 } \mvhatb{ #3 } }
+\newcommand{ \ivdifdcyl }[3]{ \mvdifcyldis{ #1 }{ #2 }{ #3 } }
+
+
+% mvgsphrad/ivgsphrad
+% Math - Vect - Spherical Gradient in Radial Direction
+%
+%    d    ^
+%   --- b a
+%   d a
+%
+%   arg a: radial variable and unit vector
+%   arg b: function
+\newcommand{ \mvgsphrad }[2]{ \mvgcrtoneb{ #1 }{ #1 }{ #2 } }
+\newcommand{ \ivgsphrad }[2]{ \ivgcrtoneb{ #1 }{ #1 }{ #2 } }
+
+
+% mvgsphllng/ivgsphlng
+% Math - Vect - Spherical Gradient in Longitudinal Direction
+%
+%   1  d    ^
+%   - --- c a
+%   b d a
+%
+%   arg a: latitudional angular variable and unit vector (Greek Letter)
+%   arg b: radial variable
+%   arg c: function
+\newcommand{ \mvgsphlng }[3]{ \,\dfrac{ 1 }{ #2 } \mvgcrtoneg{ #1 }{ #1 }{ #3 } }
+\newcommand{ \ivgsphlng }[3]{ \,\frac{ 1 }{ #2 } \ivgcrtoneg{ #1 }{ #1 }{ #3 } }
+
+
+% mvgsphlat/ivgsphlat
+% Math - Vect - Spherical Gradient in Latitudinal Direction
+%
+%      1     d    ^
+%   ------- --- d a
+%   c sin b d a
+%
+%   arg a: latitudinal variable and unit vector (Greek Letter)
+%   arg b: longitudinal angular variable (Greek Letter)
+%   arg c: radial variable
+%   arg d: function
+\newcommand{ \mvgsphlat }[4]{ \,\dfrac{ 1 }{ #3 \sin{ #2 } } \mvgcrtoneg{ #1 }{ #1 }{ #4 } }
+\newcommand{ \ivgsphlat }[4]{ \,\frac{ 1 }{ #3 \sin{ #2 } } \ivgcrtoneg{ #1 }{ #1 }{ #45 } }
+
+
+% mvgsph/ivgsph
+% Math - Vect - Spherical Gradient in Latitudinal Direction
+%
+%    d    ^   1  d    ^      1     d    ^
+%   --- d a + - --- d b + ------- --- d c
+%   d a       a d b       a sin b d c
+%
+%   arg a: radial variable and unit vector
+%   arg b: longitudinal angular variable and unit vector (Greek Letter)
+%   arg c: latitudinal angular variable and unit vector (Greek Letter)
+%   arg d: function
+\newcommand{ \mvgsph }[4]{ \Big( \mvgsphrad{ #1 }{ #4 } + \mvgsphlng{ #2 }{ #1 }{ #4 } + \mvgsphlat{ #3 }{ #2 }{ #1 }{ #4 } \Big) }
+\newcommand{ \ivgsph }[4]{ ( \ivgsphrad{ #1 }{ #4 } + \ivgsphlng{ #2 }{ #1 }{ #4 } + \ivgsphlat{ #3 }{ #2 }{ #1 }{ #4 } ) }
+
+
+% mvdifdsph/ivdifdsph
+% Mathematics - Vect - Displacement Differential for Spherical Integration
+%
+%           ^        ^              ^
+%   dt = da a + a db b + a sin b dc c
+%
+%   arg a: radial variable and unit vector
+%   arg b: longitudinal angular variable and unit vector (Greek Letter)
+%   arg c: latitudinal angular variable and unit vector (Greek Letter)
+\newcommand{ \mvdifdsph }[3]{ \,\dif{ #1 } \mvhats{ #1 } + #1 \,\dif{ #2 } \mvhatg{ #2 } + #1 \sin{ #2 } \,\dif{ #3 } \mvhatg{ #3 } }
+\newcommand{ \ivdifdsph }[3]{ \mvdifsphdis{ #1 }{ #2 }{ #3 } }
+
+
+% mvtsrthrtbl/ivtsrthrtbl
+% Math - Calc - Tensor Three x Three Table
+%   
+%       | a   b   c |
+%       |           |
+%   t = | d   e   f |
+%       |           |
+%       | g   h   i |
+%
+%   arg a: tensor r1, c1
+%   arg b: tensor r1, c2
+%   arg c: tensor r1, c3
+%
+%   arg d: tensor r2, c1
+%   arg e: tensor r2, c2
+%   arg f: tensor r2, c3
+%
+%   arg g: tensor r3, c1
+%   arg h: tensor r3, c2
+%   arg i: tensor r3, c3
+\newcommand{ \mvtsrthrtbl }[9]{
+    \begin{bmatrix}
+        #1    & #2    & #3    \\
+        #4    & #5    & #6    \\
+        #7    & #8    & #9
+    \end{bmatrix}
+    }
+\newcommand{ \ivtsrthrtbl }[9]{ \mvtsrthrtbl{ #1 }{ #2 }{ #3 }{ #4 }{ #5 }{ #6 }{ #7 }{ #8 }{ #9 } }

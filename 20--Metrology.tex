@@ -1,0 +1,297 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+
+% DESCRIPTION of 20--Metrology.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mdsnte/idsnte
+% Metrology - Dimensioning - Scientific Notation
+%
+%   a x 10^b
+%
+%   arg a:   decimal
+%   arg b:   exponent
+\newcommand{ \mmdsnte }[2]{ #1 \times 10^{ #2 } }
+\newcommand{ \imdsnte }[2]{ \mmdsnte{ #1 }{ #2 } }
+
+% mdsntepmt/idsntepmt
+% Metrology - Dimensioning - Scientific Notation with +/- Tolerance
+%
+%   (a +/- b) x 10^c
+%
+%   arg a: decimal
+%   arg b: tolerance 
+%   arg c: exponent
+\newcommand{ \mdsntepmt }[3]{ ( #1 \pm #2 ) \times 10^{ #3 } }
+\newcommand{ \idsntepmt }[3]{ \mdsntepmt{ #1 }{ #2 }{ #3 } }
+
+
+% mdadis/idadis
+% Metrology - Dimensioning - Analysis Displacement
+%
+%   x {=} L
+%
+\newcommand{ \mdadis }[0]{ L }
+\newcommand{ \idadis }[0]{ \mdadis{ } }
+
+
+% mdamass/idamass
+% Metrology - Dimensioning - Analysis Mass
+%
+%   m {=} M
+%
+\newcommand{ \mdamass }[0]{ M }
+\newcommand{ \idamass }[0]{ \mdamass{ } }
+
+
+% mdatime/idatime
+% Metrology - Dimensioning - Analysis Time
+%
+%   t {=} T
+%
+\newcommand{ \mdatime }[0]{ T }
+\newcommand{ \idatime }[0]{ \mdatime{ } }
+
+
+% mdatemp/idatemp
+% Metrology - Dimensioning - Analysis Temperature
+%
+%   t {=} Th
+%
+\newcommand{ \mdatemp }[0]{ \Theta }
+\newcommand{ \idatemp }[0]{ \mdatemp{ } }
+
+
+% mdaarea/idaarea
+% Metrology - Dimensioning - Analysis Area
+%
+%   A {=} L^2
+%
+\newcommand{ \mdaarea }[0]{ \mdadis{ }^2 }
+\newcommand{ \idaarea }[0]{ \mdaarea{ } }
+
+
+% mdavol/idavol
+% Metrology - Dimensioning - Analysis Volume
+%
+%   v {=} L^3
+%
+\newcommand{ \mdavol }[0]{ \mdadis{ }^3 }
+\newcommand{ \idavol }[0]{ \mdavol{ } }
+
+
+% mdastr/idastr
+% Metrology - Dimensioning - Analysis Strecth
+%
+%         L
+%   s {=} -
+%         L
+%
+%     {=} L L^-1
+%
+\newcommand{ \mdastr }[0]{ \dfrac{ \mdadis{ } }{ \mdadis{ } } }
+\newcommand{ \idastr }[0]{ \mdadis{ } \mdadis{ }^{ -1 } }
+
+
+% mdavel/idavel
+% Metrology - Dimensioning - Analysis Velcocity
+%
+%         L
+%   v {=} -
+%         T
+%
+%     {=} L T^-1
+%
+\newcommand{ \mdavel }[0]{ \dfrac{ \mdadis{ } }{ \mdatime{ } } }
+\newcommand{ \idavel }[0]{ \mdadis{ } \mdatime{ }^{ -1 }  }
+
+
+% mdaacc/idaacc
+% Metrology - Dimensioning - Analysis Acceleration
+%
+%          L
+%   a {=} ---
+%         T^2
+%
+%     {=} L T^-2
+%
+\newcommand{ \mdaacc }[0]{ \dfrac{ \mdadis{ } }{ \mdatime{ }^2 } }
+\newcommand{ \idaacc }[0]{ \mdadis{ } \mdatime{ }^{ -2 }  }
+
+
+% mdaden/idaden
+% Metrology - Dimensioning - Analysis Density
+%
+%          M
+%   r {=} ---
+%         L^3
+%
+%     {=} M L^-3
+%
+\newcommand{ \mdaden }[0]{ \dfrac{ \mdamass{ } }{ \mdadis{ }^3 } }
+\newcommand{ \idaden }[0]{ \mdamass{ } \mdadis{ }^{ -3 }  }
+
+
+% mdavis/idavis
+% Metrology - Dimensioning - Analysis Viscosity
+%
+%          M
+%   e {=} ---
+%         L T
+%
+%     {=} M L^-1 T^-1
+%
+\newcommand{ \mdavis }[0]{ \dfrac{ \mdamass{ } }{ \mdadis{ } \mdatime{ } } }
+\newcommand{ \idavis }[0]{ \mdamass{ } \mdadis{ }^{ -1 } \mdatime{ }^{ -1 } }
+
+
+% mdafor/idafor
+% Metrology - Dimensioning - Analysis Force
+%
+%         M L
+%   F {=} ---
+%         T^2
+%
+%     {=} M L T^-2
+%
+\newcommand{ \mdafor }[0]{ \dfrac{ \mdamass{ } \mdadis{ } }{ \mdatime{ }^2 } }
+\newcommand{ \idafor }[0]{ \mdamass{ } \mdadis{ } \mdatime{ }^{ -2 }  }
+
+
+% mdaprs/idaprs
+% Metrology - Dimensioning - Analysis Pressure, Stress, Stiffness, and Modulus (Elastic/Bulk/Shear/Young's)
+%
+%           M
+%   p {=} -----
+%         L T^2
+%
+%     {=} M L^-1 T^-2
+%
+\newcommand{ \mdaprs }[0]{ \dfrac{ \mdamass{ } }{ \mdadis{ } \mdatime{ }^2 } }
+\newcommand{ \idaprs }[0]{ \mdamass{ } \mdadis{ }^{ -1 } \mdatime{ }^{ -2 }  }
+
+
+% mdafden/idafden
+% Metrology - Dimensioning - Analysis Force Density
+%
+%            M
+%   p {=} -------
+%         L^2 T^2
+%
+%     {=} M L^-2 T^-2
+%
+\newcommand{ \mdafden }[0]{ \dfrac{ \mdamass{ } }{ \mdadis{ }^2 \mdatime{ }^2 } }
+\newcommand{ \idafden }[0]{ \mdamass{ } \mdadis{ }^{ -2 } \mdatime{ }^{ -2 }  }
+
+
+% mdathe/idathe
+% Metrology - Dimensioning - Analysis Thermal Expansion
+%
+%         1
+%   a {=} --
+%         Th
+%
+%     {=} Th^-1
+%
+\newcommand{ \mdathe }[0]{ \dfrac{ 1 }{ \mdatemp{ } } }
+\newcommand{ \idathe }[0]{ \mdatemp{ }^{ -1 } }
+
+
+% mdathd/idathd
+% Metrology - Dimensioning - Analysis Thermal Diffusivity
+%
+%         L^2
+%   k {=} ---
+%          T
+%
+%     {=} L^2 T^-1
+%
+\newcommand{ \mdathd }[0]{ \dfrac{ \mdadis{ }^2 }{ \mdatemp{ } } }
+\newcommand{ \idathd }[0]{ \mdadis{ }^2 \mdatemp{ }^{ -1 } }
+
+
+% mdafreq/idafreq
+% Metrology - Dimensioning - Analysis Frequency
+%
+%         1
+%   f {=} -
+%         T
+%
+%     {=} T^-1
+%
+\newcommand{ \mdafreq }[0]{ \dfrac{ 1 }{ \mdatime{ } } }
+\newcommand{ \idafreq }[0]{ \mdatime{ }^{ -1 } }

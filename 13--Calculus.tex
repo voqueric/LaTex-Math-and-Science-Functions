@@ -1,0 +1,129 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 13--Calculus.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mcodelb/icodelb
+% Math - Calc - Ordinary Differential Leibniz Notation
+%
+%   d^b
+%   ---- c
+%   da^b
+%
+%   arg a: operator variable
+%   arg b: order of differentiation (leave empty if = 1)
+%   arg c: function (leave empty if not expressed)
+\newcommand{ \mcodelb }[3]{ \,\dfrac{ \dif^{ #2 } }{ \dif{ #1 }^{ #2 } } #3 }
+\newcommand{ \icodelb }[3]{ \,\frac{ \dif^{ #2 } }{ \dif{ #1 }^{ #2 } } #3 }
+
+
+% mcpdelb/icpdelb
+% Math - Calc - Partial Differential Leibniz Notation
+%
+%   d^b
+%   ---- c
+%   da^b
+%
+%   arg a: operator variable
+%   arg b: order of differentiation (leave empty if = 1)
+%   arg c: function (leave empty if not expressed)
+\newcommand{ \mcpdelb }[3]{ \,\dfrac{ \partial^{ #2 } }{ \partial{ #1 }^{ #2 } } #3 }
+\newcommand{ \icpdelb }[3]{ \,\frac{ \partial^{ #2 } }{ \partial{ #1 }^{ #2 } } #3 }
+
+
+% mcdifvcyl/icdifvcyl
+% Math - Calc - Differential for Cylindrical Volume Integration
+%
+%   dt = a da db dc
+%
+%   arg a: radial variable
+%   arg b: longitudinal angular variable 
+%   arg c: height variable
+\newcommand{ \mcdifvcyl }[3]{ \,{ #1 } \,\dif{ #1 } \,\dif{ #2 } \,\dif{ #3 } }
+\newcommand{ \icdifccyl }[3]{ \mvdifcylvol{ #1 }{ #2 }{ #3 } }
+
+
+% mcdifvsph/icdifvsph
+% Math - Calc - Differential for Spherical Volume Integration
+%
+%   dt = a^2 sin b da db dc
+%
+%   arg a: radial variable
+%   arg b: longitudinal angular variable 
+%   arg c: latitudinal angular variable
+\newcommand{ \mcdifvsph }[3]{ \,{ #1 }^2 \sin{ #2 } \,\dif{ #1 } \,\dif{ #2 } \,\dif{ #3 } }
+\newcommand{ \icdifvsph }[3]{ \mcdifsphvol{ #1 }{ #2 }{ #3 } }

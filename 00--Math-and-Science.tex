@@ -1,0 +1,175 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 00--Science_and_Math.tex
+% ==========
+%
+% This file contains packages for use in creating mathematical,
+% scientific, and computer LaTeX environments and functions.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+
+
+
+
+% INSTALLATION
+% ==========
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+
+
+
+
+% Documentation for AMS packages
+% http://www.ams.org/arc/resources/amslatex-about.html
+\usepackage{amsmath}
+% The following packages are automatically loaded by amsmath,
+% https://www.ctan.org/pkg/amsmath?lang=en
+%   \usepackage{amsbsy}                 % Bold Symbols
+%   \usepackage{amsopn}                 % Operator Names
+%   \usepackage{amstext}                % Text embedded in mathematics
+
+% \usepackage{amscls}			% MikTex 2.9 errors on attempt to load
+% The following packages are automatically loaded by amscls,
+% https://www.ctan.org/pkg/amscls?lang=en
+% \usepackage{amsart}                  	% MikTex 2.9 errors on attempt to load
+% \usepackage{amsbook}                 	% MikTex 2.9 errors on attempt to load
+% \usepackage{amsproc}                 	% MikTex 2.9 errors on attempt to load
+\usepackage{amsfonts}                   % Extended set of fonts for mathematics
+% https://www.ctan.org/pkg/amsfonts?lang=en
+\usepackage{amsrefs}                    % Bibliographic support
+% https://www.ctan.org/pkg/amsrefs?lang=en
+\usepackage{amssymb}                    % Extended symbol collection
+% Difficult to find concise documentation, very brief mention here:
+% https://www.ctan.org/pkg/amsfonts?lang=en
+
+
+
+
+\usepackage{mathtools}                  % Fixes and enhancements to amsmath
+% https://www.ctan.org/pkg/mathtools
+
+
+
+
+% Documentation for Walter A Schmidt Commands
+\usepackage{fixmath}                    % Conformity to ISO 31-0 and 31-13 (1992)
+% https://www.ctan.org/pkg/fixmath
+% Are these valid any longer, have the standards changed?
+\usepackage{gensymb}                    % General scientific symbols
+% https://www.ctan.org/pkg/gensymb
+\usepackage{icomma}                     % Proper spacing of commas in long numbers
+% https://www.ctan.org/pkg/icomma
+\usepackage{upgreek}                    % Upper case Greek letters
+% https://www.ctan.org/pkg/upgreek
+
+
+
+
+
+% Documentation for l3packages
+\usepackage{xtemplate}				 % LaTeX3 template definition
+% https://www.ctan.org/pkg/xtemplate
+\usepackage{xparse}                   % LaTeX3 command definition
+% https://www.ctan.org/pkg/xparse
+\usepackage{xfp}                      % IEEE 754 Floating Point
+% https://www.ctan.org/pkg/xfp
+\usepackage{xfrac}                    % Fractions of n/d form
+% https://www.ctan.org/pkg/xfrac
+% Requires packages xtemplate and xparse
+
+
+
+
+\usepackage{commath}                    % Differential and delimiter commands
+% https://www.ctan.org/pkg/commath
+
+
+
+
+% Documentation for Martin Hensel packages
+\usepackage[version=3]{mhchem}			% Chemical and molecular formulae and equations
+% https://www.ctan.org/pkg/mhchem
+\usepackage{hpstatement}				% Chemical hazard and precautionary statements
+% https://www.ctan.org/pkg/hpstatement
+\usepackage{rsphrase}                  % Chemical risk and safety phrases
+% https://www.ctan.org/pkg/rsphrase
+
+
+
+
+\usepackage{listings}					% Typeset programming languages
+% https://www.ctan.org/pkg/listings
+
+
+
+
+% PACKAGES FOR FUTURE USE
+% ==========
+% \usepackage{xargs}
+% \usepackage{xkeyval}
+
+
+
+% CUSTOM FONTS
+% ==========
+% Define a script font for use within math environments
+% To use calligraphy just call \mcall{<text>}
+\DeclareMathAlphabet{\mcall}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+
+
+
+
+% LOAD FUNCTIONS
+% ==========
+% Lower-level documents are divided by function types for ease of editing
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/10--Algebra.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/10--Algebra.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/11--Geometry.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/11--Geometry.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/12--Trigonometry.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/12--Trigonometry.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/13--Calculus.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/13--Calculus.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/14--Vector.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/14--Vector.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/20--Metrology.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/20--Metrology.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/30--Physics.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/30--Physics.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/31--Geophysics.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/31--Geophysics.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/40--Chemistry.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/40--Chemistry.tex}}
+\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/50--Programming.tex}%
+	{}%
+	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/50--Programming.tex}}

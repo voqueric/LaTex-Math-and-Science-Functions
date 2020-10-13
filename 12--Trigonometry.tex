@@ -1,0 +1,1099 @@
+% LaTeX Math and Science Functions by Larry A. Hartman 
+% is licensed under a Creative Commons 
+% Attribution-NonCommercial 4.0 International License.
+%
+% To view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-nc/4.0/.
+%
+% Permissions beyond the scope of this license may be 
+% available at https://wavesofvoqueric.com/portfolio/latex/.
+
+
+
+
+% DESCRIPTION of 12--Trigonometry.tex
+% ==========
+%
+% This file contains commands that are primarily described as 
+% algebraic in nature.
+%
+% The latest copy can be obtained from the following website:
+%
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions
+%
+% Every attempt will be made to keep command names and arguements
+% the same in successive versions to maintain backward compatibility.
+
+
+
+
+% INSTALLATION
+% ==========
+% This document is automatically loaded by the higher-level document
+% 00--Science_and_Math.tex, and should not be loaded external to this document.
+%
+% Use the following line within the document preamble to determine if compilation
+% take place in a Linux operating system or Windows operating system:
+%
+% \InputIfFileExists{/linux/path/to/file/00--Science_and_Math.tex}%
+%   {}%
+%   {\input{C:/windows/path/to/file/00--Science_and_Math.tex}}
+%
+% This file must be loaded prior to loading other files contained in the
+% https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+ 
+ 
+
+
+% GENERAL NOTES
+% ==========
+% - Commands are grouped according to type.
+% - Each command is provided with:
+%       Command name
+%       Description
+%       Example or Equation (visual approximation using text format)
+%       Arguments
+% - Commands representing equations type-set only the right-side 
+%   of the provided equation
+
+
+
+
+% COMMAND NAME CONVENTIONS
+% ==========
+% - First letter represents typesetting mode: 
+%       -- Math form (prefixed with 'm')
+%       -- Inline form (prefixed with 'i')
+%       -- Inline forms that do not differ from counterpart math forms
+%          are simply mapped to the math forms.
+% - Second letter represents the major subdiscipline of the command:
+%       -- Algebra ('a')
+%       -- Calculus ('c')
+%       -- Metrology ('m')
+%       -- Trigonometry ('t')
+%       -- Physics ('p')
+% - Third letters and beyond represent abbreviated forms of the command functions.
+
+
+
+
+% mtusin/itusin
+% Math - Trig - Unity of Sine
+%
+%       sin^b a
+%   1 = -------
+%       sin^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtusin }[2]{ \dfrac{ \sin^{ #2 }{ #1 } }{ \sin^{ #2 }{ #1 } } }
+\newcommand{ \itusin }[2]{ \frac{ \sin^{ #2 }{ #1 } }{ \sin^{ #2 }{ #1 } } }
+
+
+% mtucos/itucos
+% Math - Trig - Unity of Cosine
+%
+%       cos^b a
+%   1 = ------- 
+%       cos^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtucos }[2]{ \dfrac{ \cos^{ #2 }{ #1 } }{ \cos^{ #2 }{ #1 } } }
+\newcommand{ \itucos }[2]{ \frac{ \cos^{ #2 }{ #1 } }{ \cos^{ #2 }{ #1 } } }
+
+
+% mtutan/itutan
+% Math - Trig - Unity of Tangent
+%
+%       tan^b a
+%   1 = ------- 
+%       tan^b a
+% 
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtutan }[2]{ \dfrac{ \tan^{ #2 }{ #1 } }{ \tan^{ #2 }{ #1 } } }
+\newcommand{ \itutan }[2]{ \frac{ \tan^{ #2 }{ #1 } }{ \tan^{ #2 }{ #1 } } }
+
+
+% mtucot/itucot
+% Math - Trig - Unity of Cotangent
+%
+%       cot^b a
+%   1 = ------- 
+%       cot^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtucot }[2]{ \dfrac{ \cot^{ #2 }{ #1 } }{ \cot^{ #2 }{ #1 } } }
+\newcommand{ \itucot }[2]{ \frac{ \cot^{ #2 }{ #1 } }{ \cot^{ #2 }{ #1 } } }
+
+
+% mtrsin/itrsin
+% Math - Trig - Ratio of Sine
+%
+%                1
+%   sin^b a = -------
+%             csc^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrsin }[2]{ \dfrac{ 1 }{ \csc^{ #2 }{ #1 } } }
+\newcommand{ \itrsin }[2]{ \frac{ 1 }{ \csc^{ #2 }{ #1 } } }
+
+
+% mtrcos/itrcos
+% Math - Trig - Ratio of Cosine
+%
+%                1
+%   cos^b a = -------
+%             sec^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrcos }[2]{ \dfrac{ 1 }{ \sec^{ #2 }{ #1 } } }
+\newcommand{ \itrcos }[2]{ \frac{ 1 }{ \sec^{ #2 }{ #1 } } }
+
+
+% mtrtan/itrtan
+% Math - Trig - Ratio of Tangent
+%
+%             sin^b a
+%   tan^b a = -------
+%             cos^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrtan }[2]{ \dfrac{ \sin^{ #2 }{ #1 } }{ \cos^{ #2 }{ #1 } } }
+\newcommand{ \itrtan }[2]{ \frac{ \sin^{ #2 }{ #1 } }{ \cos^{ #2 }{ #1 } } }
+
+
+% mtrcot/itrcot
+% Math - Trig - Ratio of Cotangent
+%
+%             cos^b a
+%   cot^b a = -------
+%             sin^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrcot }[2]{ \dfrac{ \cos^{ #2 }{ #1 } }{ \sin^{ #2 }{ #1 } } }
+\newcommand{ \itrcot }[2]{ \frac{ \cos^{ #2 }{ #1 } }{ \sin^{ #2 }{ #1 } } }
+
+
+% mtrsec/itrsec
+% Math - Trig - Ratio of Secant
+%
+%                1
+%   sec^b a = -------
+%             cos^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrsec }[2]{ \dfrac{ 1 }{ \cos^{ #2 }{ #1 } } }
+\newcommand{ \itrsec }[2]{ \frac{ 1 }{ \cos^{ #2 }{ #1 } } }
+
+
+% mtrcsc/itrcsc
+% Math - Trig - Ratio of Cosecant
+%
+%                1
+%   csc^b a = -------
+%             sin^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtrcsc }[2]{ \dfrac{ 1 }{ \sin^{ #2 }{ #1 } } }
+\newcommand{ \itrcsc }[2]{ \frac{ 1 }{ \sin^{ #2 }{ #1 } } }
+
+
+% mtatri/itatri
+% Math - Trig - Area of Triangle
+%
+%       1
+%   A = - ab sin c
+%       2
+%
+%   arg a: side a
+%   arg b: side b
+%   arg c: angle between sides
+\newcommand{ \mtatri }[3]{ \dfrac{ 1 }{ 2 } #1 #2 \,\sin{ #3 } }
+\newcommand{ \itatri }[3]{ \frac{ 1 }{ 2 } #1 #2 \,\sin{ #3 } }
+
+
+% mtptusincoss/itptusincoss
+% Math - Trig - Pythagorean Thereom - Unity in Sin & Cos terms - Squared Form
+%
+%   1 = sin^2 a + cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptusincoss }[1]{ \sin^2{ #1 } + \cos^2{ #1 } }
+\newcommand{ \itptusincoss }[1]{ \mtptusincoss{ #1 } }
+
+
+% mtptusincosr/itptusincosr
+% Math - Trig - Pythagorean Thereom - Unity in Sin & Cos terms - Root Form
+%
+%   1 = (sin^2 a + cos^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptusincosr }[1]{ ( \sin^2{ #1 } + \cos^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptusincosr }[1]{ \mtptusincosr{ #1 } }
+
+
+% mtptusectans/itptusectans
+% Math - Trig - Pythagorean Thereom - Unity in Sec & Tan terms - Squared Form
+%
+%   1 = sec^2 a - tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptusectans }[1]{ \sec^2{ #1 } - \tan^2{ #1 } }
+\newcommand{ \itptusectans }[1]{ \mtptusectans{ #1 } }
+
+
+% mtptusectanr/itptusectanr
+% Math - Trig - Pythagorean Thereom - Unity in Sec & Tan terms - Root Form
+%
+%   1 = (sec^2 a - tan^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptusectanr }[1]{ ( \sec^2{ #1 } - \tan^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptusectanr }[1]{ \mtptusectanr{ #1 } }
+
+
+% mtptucsccots/itptucsccots
+% Math - Trig - Pythagorean Thereom - Unity in Csc & Cot terms - Squared Form
+%
+%   1 = csc^2 a - cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptucsccots }[1]{ \csc^2{ #1 } - \cot^2{ #1 } }
+\newcommand{ \itptucsccots }[1]{ \mtptucsccots{ #1 } }
+
+
+% mtptucsccotr/itptucsccotr
+% Math - Trig - Pythagorean Thereom - Unity in Csc & Cot terms - Root Form
+%
+%   1 = (csc^2 a - cot^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptucsccotr }[1]{ ( \csc^2{ #1 } - \cot^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptucsccotr }[1]{ \mtptucsccotr{ #1 } }
+
+
+% mtptdsincoss/itptdsincoss
+% Math - Trig - Pythagorean Thereom - Sin in terms of Cos - Squared Form
+%
+%   sin^2 a = 1 - cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsincoss }[1]{ 1 - \cos^2{ #1 } }
+\newcommand{ \itptdsincoss }[1]{ \mtptdsincos{ #1 } }
+
+
+% mtptdsincosr/itptdsincosr
+% Math - Trig - Pythagorean Thereom - Sin in terms of Cos - Root Form
+%
+%   sin a = (1 - cos^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdsincosr }[1]{ ( 1 - \cos^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdsincosr }[1]{ \mtptdsincosr{ #1 } }
+
+
+% mtptdsintans/itptdsintans
+% Math - Trig - Pythagorean Thereom - Sin in terms of Tan - Squared Form
+%
+%               tan^2 a
+%   sin^2 a = -----------
+%             1 + tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsintans }[1]{ \dfrac{ \tan^2{ #1 } }{ 1 + \tan^2{ #1 } } }
+\newcommand{ \itptdsintans }[1]{ \frac{ \tan^2{ #1 } }{ 1 + \tan^2{ #1 } } }
+
+
+% mtptdsintanr/itptdsintanr
+% Math - Trig - Pythagorean Thereom - Sin in terms of Tan - Root Form
+%
+%               tan^2 a
+%   sin a = ( ----------- )^(1/2)
+%             1 + tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsintanr }[1]{ \bigg( \dfrac{ \tan^2{ #1 } }{ 1 + \tan^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdsintanr }[1]{ ( \frac{ \tan^2{ #1 } }{ 1 + \tan^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdsincots/itptdsincots
+% Math - Trig - Pythagorean Thereom - Sin in terms of Cot - Squared Form
+%
+%                  1
+%   sin^2 a = -----------
+%             1 + cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsincots }[1]{ \dfrac{ 1 }{ 1 + \cot^2{ #1 } } }
+\newcommand{ \itptdsincots }[1]{ \frac{ 1 }{ 1 + \cot^2{ #1 } } }
+
+
+% mtptdsincotr/itptdsincotr
+% Math - Trig - Pythagorean Thereom - Sin in terms of Cot - Root Form
+%
+%                  1
+%   sin a = ( ----------- )^(1/2)
+%             1 + cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsincotr }[1]{ \bigg( \dfrac{ 1 }{ 1 + \cot^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \otptdsincotr }[1]{ ( \frac{ 1 }{ 1 + \cot^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdsinsecs/itptdsinsecs
+% Math - Trig - Pythagorean Thereom - Sin in terms of Sec - Squared Form
+%
+%             sec^2 a - 1
+%   sin^2 a = -----------
+%                  1
+%
+%   arg a: angle
+\newcommand{ \mtptdsinsecs }[1]{ \dfrac{ \sec^2{ #1 } - 1 }{ \sec^2{ #1 } } }
+\newcommand{ \itptdsinsecs }[1]{ \frac{ \sec^2{ #1 } - 1 }{ \sec^2{ #1 } } }
+
+
+% mtptdsinsecr/itptdsinsecr
+% Math - Trig - Pythagorean Thereom - Sin in terms of Sec - Root Form
+%
+%             sec^2 a - 1
+%   sin a = ( ----------- )^(1/2)
+%                  1
+%
+%   arg a: angle
+\newcommand{ \mtptdsinsecr }[1]{ \bigg( \dfrac{ \sec^2{ #1 } - 1 }{ \sec^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdsinsecr }[1]{ ( \frac{ \sec^2{ #1 } - 1 }{ \sec^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdsincscs/itptdsincscs
+% Math - Trig - Pythagorean Thereom - Sin in terms of Csc - Squared Form
+%
+%                1
+%   sin^2 a = -------
+%             csc^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsincscs }[1]{ \mtrsin{ #1 }{ 2 } }
+\newcommand{ \itptdsincscs }[1]{ \itrsin{ #1 }{ 2 } }
+
+
+% mtptdsincscr/itptdsincscr
+% Math - Trig - Pythagorean Thereom - Sin in terms of Csc - Root Form
+%
+%             1
+%   sin a = -----
+%           csc a
+%
+%   arg a: angle
+\newcommand{ \mtptdsincscr }[1]{ \mtrsin{ #1 }{ } }
+\newcommand{ \itptdsincscr }[1]{ \itrsin{ #1 }{ } }
+
+
+% mtptdcossins/itptdcossins
+% Math - Trig - Pythagorean Thereom - Cos in terms of Sin - Squared Form
+%
+%   cos^2 a = 1 - sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcossins }[1]{ 1 - \sin^2{ #1 } }
+\newcommand{ \itptdcossins }[1]{ \mtptdcossins{ #1 } }
+
+
+% mtptdcossinr/itptdcossinr
+% Math - Trig - Pythagorean Thereom - Cos in terms of Sin - Root Form
+%
+%   cos a = (1 - sin^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdcossinr }[1]{ ( 1 - \sin^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcossinr }[1]{ \mtptdcossinr{#1} }
+
+
+% mtptdcostans/itptdcostans
+% Math - Trig - Pythagorean Thereom - Cos in terms of Tan - Squared Form
+%
+%                  1
+%   cos^2 a = -----------
+%             1 + tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcostans }[1]{ \dfrac{ 1 }{ 1 + \tan^2{ #1 } } }
+\newcommand{ \itptdcostans }[1]{ \frac{ 1 }{ 1 + \tan^2{ #1 } } }
+
+
+% mtptdcostanr/itptdcostanr
+% Math - Trig - Pythagorean Thereom - Cos in terms of Tan - Root Form
+%
+%                  1
+%   cos a = ( ----------- )^(1/2)
+%             1 + tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcostanr }[1]{ \bigg( \dfrac{ 1 }{ 1 + \tan^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcostanr }[1]{ ( \frac{ 1 }{ 1 + \tan^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcostans/itptdcostans
+% Math - Trig - Pythagorean Thereom - Cos in terms of Cot - Squared Form
+%
+%               cot^2 a
+%   cos^2 a = -----------
+%             1 + cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcoscots }[1]{ \dfrac{ \cot^2{ #1 } }{ 1 + \cot^2{ #1 } } }
+\newcommand{ \itptdcoscots }[1]{ \frac{ \cot^2{ #1 } }{ 1 + \cot^2{ #1 } } }
+
+
+% mtptdcoscotr/itptdcoscotr
+% Math - Trig - Pythagorean Thereom - Cos in terms of Cot - Root Form
+%
+%               cot^2 a
+%   cos a = ( ----------- )^(1/2)
+%             1 + cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcoscotr }[1]{ \bigg( \dfrac{ \cot^2{ #1 } }{ 1 + \cot^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcoscotr }[1]{ ( \frac{ \cot^2{ #1 } }{ 1 + \cot^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcossecs/itptdcossecs
+% Math - Trig - Pythagorean Thereom - Cos in terms of Sec - Squared Form
+%
+%                1
+%   cos^2 a = -------
+%             sec^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcossecs }[1]{ \mtrcos{ #1 }{ 2 } }
+\newcommand{ \itptdcossecs }[1]{ \itrcos{ #1 }{ 2 } }
+
+
+% mtptdcossecr/itptdcossecr
+% Math - Trig - Pythagorean Thereom - Cos in terms of Sec - Root Form
+%
+%             1
+%   cos a = -----
+%           sec a
+%
+%   arg a: angle
+\newcommand{ \mtptdcossecr }[1]{ \mtrcos{ #1 }{ } }
+\newcommand{ \itptdcossecr }[1]{ \itrcos{ #1 }{ } }
+
+
+% mtptdcoscscs/itptdcoscscs
+% Math - Trig - Pythagorean Thereom - Cos in terms of Csc - Squared Form
+%
+%             csc^2 a - 1
+%   cos^2 a = -----------
+%               csc^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcoscscs }[1]{ \dfrac{ \csc^2{ #1 } - 1}{\csc^2{ #1 } } }
+\newcommand{ \itptdcoscscs }[1]{ \frac{ \csc^2{ #1 } - 1}{\csc^2{ #1 } } }
+
+
+% mtptdcoscscr/itptdcoscscr
+% Math - Trig - Pythagorean Thereom - Cos in terms of Csc - Root Form
+%
+%             csc^2 a - 1
+%   cos a = ( ----------- )^(1/2)
+%               csc^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcoscscr }[1]{ \bigg( \dfrac{ \csc^2{ #1 } - 1}{ \csc^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \mitptdcoscscr }[1]{ ( \frac{ \csc^2{ #1 } - 1}{ \csc^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdtansins/itptdtansins
+% Math - Trig - Pythagorean Thereom - Tan in terms of Sin - Squared Form
+%
+%               sin^2 a
+%   tan^2 a = -----------
+%             1 - sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdtansins }[1]{ \dfrac{ \sin^2{ #1 } }{1 - \sin^2{ #1 } } }
+\newcommand{ \itptdtansins }[1]{ \frac{ \sin^2{ #1 } }{1 - \sin^2{ #1 } } }
+
+
+% mtptdtansinr/itptdtansinr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Sin - Root Form
+%
+%               sin^2 a
+%   tan a = ( ----------- )^(1/2)
+%             1 - sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdtansinr }[1]{ \bigg( \dfrac{ \sin^2{ #1 } }{ 1 - \sin^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdtansinr }[1]{ ( \frac{ \sin^2{ #1 } }{ 1 - \sin^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdtancoss/itptdtancoss
+% Math - Trig - Pythagorean Thereom - Tan in terms of Cos - Squared Form
+%
+%             1 - cos^2 a
+%   tan^2 a = -----------
+%               cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdtancoss }[1]{ \dfrac{ 1 - \cos^2{ #1 } }{ \cos^2{ #1 } } }
+\newcommand{ \itptdtancoss }[1]{ \frac{ 1 - \cos^2{ #1 } }{ \cos^2{ #1 } } }
+
+
+% mtptdtancosr/itptdtancosr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Cos - Squared Form
+%
+%             1 - cos^2 a
+%   tan a = ( ----------- )^(1/2)
+%               cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdtancosr }[1]{ \bigg( \dfrac{ 1 - \cos^2{ #1 } }{ \cos^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdtancosr }[1]{ ( \frac{ 1 - \cos^2{ #1 } }{ \cos^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdtancots/itptdtancots
+% Math - Trig - Pythagorean Thereom - Tan in terms of Cot - Squared Form
+%
+%                1
+%   tan^2 a = -------
+%             cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdtancots }[1]{ \dfrac{ 1 }{ \cot^2{ #1 } } }
+\newcommand{ \itptdtancots }[1]{ \frac{ 1 }{ \cot^2{ #1 } } }
+
+
+% mtptdtancotr/itptdtancotr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Cot - Root Form
+%
+%             1
+%   tan a = -----
+%           cot a
+%
+%   arg a: angle
+\newcommand{ \mtptdtancotr }[1]{ \dfrac{ 1 }{ \cot{ #1 } } }
+\newcommand{ \itptdtancotr }[1]{ \frac{ 1 }{ \cot{ #1 } } }
+
+
+% mtptdtansecs/itptdtansecs
+% Math - Trig - Pythagorean Thereom - Tan in terms of Sec - Squared Form
+%
+%   tan^2 a = sec^2 - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdtansecs }[1]{ \sec^2{ #1 } - 1 }
+\newcommand{ \itptdtansecs }[1]{ \mtptdtansecs{ #1 } }
+
+
+% mtptdtansecr/itptdtansecr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Sec - Root Form
+%
+%   tan a = (sec^2 - 1)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdtansecr }[1]{ ( \sec^2{ #1 } - 1 )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdtansecr }[1]{ \mtptdtansecr{ #1 } }
+
+
+% mtptdtancscs/itptdtancscs
+% Math - Trig - Pythagorean Thereom - Tan in terms of Csc - Squared Form
+%
+%                  1
+%   tan^2 a = -----------
+%             csc^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdtancscs }[1]{ \dfrac{ 1 }{ \csc^2{ #1 } - 1} }
+\newcommand{ \itptdtancscs }[1]{ \frac{ 1 }{ \csc^2{ #1 } - 1} }
+
+
+% mtptdtancscr/itptdtancscr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Csc - Root Form
+%
+%                  1
+%   tan a = ( ----------- )^(1/2)
+%             csc^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdtancscr }[1]{ \bigg( \dfrac{ 1 }{ \csc^2{ #1 } - 1} \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \mitptdtancscr }[1]{ ( \frac{ 1 }{ \csc^2{ #1 } - 1} )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcotsins/itptdcotsins
+% Math - Trig - Pythagorean Thereom - Cot in terms of Sin - Squared Form
+%
+%             1 - sin^2 a
+%   cot^2 a = -----------
+%               sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcotsins }[1]{ \dfrac{ 1 - \sin^2{ #1 } }{ \sin^2{ #1 } } }
+\newcommand{ \itptdcotsins }[1]{ \frac{ 1 - \sin^2{ #1 } }{ \sin^2{ #1 } } }
+
+
+% mtptdcotsinr/itptdcotsinr
+% Math - Trig - Pythagorean Thereom - Cot in terms of Sin - Root Form
+%
+%             1 - sin^2 a
+%   cot a = ( ----------- )^(1/2)
+%               sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcotsinr }[1]{ \bigg( \dfrac{ 1 - \sin^2{ #1 } }{ \sin^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcotsinr }[1]{ ( \frac{ 1 - \sin^2{ #1 } }{ \sin^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcotsins/itptdcotsins
+% Math - Trig - Pythagorean Thereom - Cot in terms of Sin - Squared Form
+%
+%               cos^2 a
+%   cot^2 a = -----------
+%             1 - cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcotcoss }[1]{ \dfrac{ \cos^2{ #1 } }{ 1 - \cos^2{ #1 } } }
+\newcommand{ \itptdcotcoss }[1]{ \frac{ \cos^2{ #1 } }{ 1 - \cos^2{ #1 } } }
+
+
+% mtptdcotsinr/itptdcotsinr
+% Math - Trig - Pythagorean Thereom - Cot in terms of Cos - Root Form
+%
+%               cos^2 a
+%   cot a = ( ----------- )^(1/2)
+%             1 - cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcotcosr }[1]{ \bigg( \dfrac{ \cos^2{ #1 } }{ 1 - \cos^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcotcosr }[1]{ ( \frac{ \cos^2{ #1 } }{ 1 - \cos^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcottans/itptdcottans
+% Math - Trig - Pythagorean Thereom - Cot in terms of Tan - Squared Form
+%
+%                1
+%   cot^2 a = -------
+%             tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcottans }[1]{ \dfrac{ 1 }{ \tan^2{ #1 } } }
+\newcommand{ \itptdcottans }[1]{ \frac{ 1 }{ \tan^2{ #1 } } }
+
+
+% mtptdcottanr/itptdcottanr
+% Math - Trig - Pythagorean Thereom - Cot in terms of Tan - Root Form
+%
+%             1
+%   cot a = -----
+%           tan a
+%
+%   arg a: angle
+\newcommand{ \mtptdcottanr }[1]{ \dfrac{ 1 }{ \tan{ #1 } } }
+\newcommand{ \itptdcottanr }[1]{ \frac{ 1 }{ \tan{ #1 } } }
+
+
+% mtptdcotsecs/itptdcotsecs
+% Math - Trig - Pythagorean Thereom - Cot in terms of Tan - Squared Form
+%
+%                  1
+%   cot^2 a = -----------
+%             sec^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdcotsecs }[1]{ \dfrac{ 1 }{ \sec^2{ #1 } - 1 } }
+\newcommand{ \itptdcotsecs }[1]{ \frac{ 1 }{ \sec^2{ #1 } - } }
+
+
+% mtptdcotsecr/itptdcotsecr
+% Math - Trig - Pythagorean Thereom - Cot in terms of Tan - Root Form
+%
+%                  1
+%   cot a = ( ----------- )^(1/2)
+%             sec^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdcotsecr }[1]{ \bigg( \dfrac{ 1 }{ \sec^2{ #1 } - 1 } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcotsecr }[1]{ ( \frac{ 1 }{ \sec^2{ #1 } - 1 } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdtancscs/itptdtancscs
+% Math - Trig - Pythagorean Thereom - Tan in terms of Csc - Squared Form
+%
+%   cot^2 a = csc^2 - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdcotcscs }[1]{ \csc^2{ #1 } - 1 }
+\newcommand{ \itptdcotcscs }[1]{ \mtptdcotcscs{ #1 } }
+
+
+% mtptdtancscr/itptdtancscr
+% Math - Trig - Pythagorean Thereom - Tan in terms of Csc - Root Form
+%
+%   cot a = (csc^2 - 1)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdcotcscr }[1]{ ( \csc^2{ #1 } - 1 )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcotcscr }[1]{ ( \mtptdcotcscr{ #1 } }
+
+
+% mtptdsecsins/itptdsecsins
+% Math - Trig - Pythagorean Thereom - Sec in terms of Sin - Squared Form
+%
+%                  1
+%   sec^2 a = -----------
+%             1 - sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsecsins }[1]{ \dfrac{ 1 }{ 1 - \sin^2{ #1 } } }
+\newcommand{ \itptdsecsins }[1]{ \frac{ 1 }{ 1 - \sin^2{ #1 } } }
+
+
+% mtptdsecsinr/itptdsecsinr
+% Math - Trig - Pythagorean Thereom - Sec in terms of Sin - Root Form
+%
+%                  1
+%   sec a = ( ----------- )^(1/2)
+%             1 - sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsecsinr }[1]{ \bigg( \dfrac{ 1 }{ 1 - \sin^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdsecsinr }[1]{ ( \frac{ 1 }{ 1 - \sin^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdseccoss/itptdseccoss
+% Math - Trig - Pythagorean Thereom - Sec in terms of Cos - Squared Form
+%
+%                1
+%   sec^2 a = -------
+%             cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdseccoss }[1]{ \mtrsec{ #1 }{ 2 } }
+\newcommand{ \itptdseccoss }[1]{ \itrsec{ #1 }{ 2 } }
+
+
+% mtptdseccosr/itptdseccosr
+% Math - Trig - Pythagorean Thereom - Sec in terms of Cos - Root Form
+%
+%             1
+%   sec a = -----
+%           cos a
+%
+%   arg a: angle
+\newcommand{ \mtptdseccosr }[1]{ \mtrsec{ #1 }{ } }
+\newcommand{ \itptdseccosr }[1]{ \itrsec{ #1 }{ } }
+
+
+% mtptdsectans/itptdsectans
+% Math - Trig - Pythagorean Thereom - Sec in terms of Tan - Squared Form
+%
+%   sec^2 a = 1 + tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdsectans }[1]{ 1 + \tan^2{ #1 }  }
+\newcommand{ \itptdsectans }[1]{ \mtptdsectans{ #1 } }
+
+
+% mtptdsectanr/itptdsectanr
+% Math - Trig - Pythagorean Thereom - Sec in terms of Tan - Root Form
+%
+%   sec a = (1 + tan^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdsectanr }[1]{ ( 1 + \tan^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdsectanr }[1]{ \mtptdsectanr{ #1 } }
+
+
+% mtptdseccots/itptdseccots
+% Math - Trig - Pythagorean Thereom - Sec in terms of Cot - Squared Form
+%
+%             1 + cot^2 a
+%   sec^2 a = -----------
+%               cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdseccots }[1]{ \dfrac{ 1 + \cot^2{ #1 } }{ \cot^2{ #1 } } }
+\newcommand{ \itptdseccots }[1]{ \frac{ 1 + \cot^2{ #1 } }{ \cot^2{ #1 } } }
+
+
+% mtptdseccotr/itptdseccotr
+% Math - Trig - Pythagorean Thereom - Sec in terms of Cot - Root Form
+%
+%             1 + cot^2 a
+%   sec a = ( ----------- )^(1/2)
+%               cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdseccotr }[1]{ \bigg( \dfrac{ 1 + \cot^2{ #1 } }{ \cot^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdseccotr }[1]{ ( \frac{ 1 + \cot^2{ #1 } }{ \cot^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdseccscs/itptdseccscs
+% Math - Trig - Pythagorean Thereom - Sec in terms of Csc - Squared Form
+%
+%               csc^2 a
+%   sec^2 a = -----------
+%	          csc^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdseccscs }[1]{ \dfrac{ \csc^2{ #1 } }{ \csc^2{ #1 } - 1 } }
+\newcommand{ \itptdseccscs }[1]{ \frac{ \csc^2{ #1 } }{ \csc^2{ #1 } - 1 } }
+
+
+% mtptdseccscr/itptdseccscr
+% Math - Trig - Pythagorean Thereom - Sec in terms of Csc - Root Form
+%
+%               csc^2 a
+%   sec a = ( ----------- )^(1/2)
+%             csc^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdseccscr }[1]{ \bigg( \dfrac{ \csc^2{ #1 } }{ \csc^2{ #1 } - 1 } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdseccscr }[1]{ ( \frac{ \csc^2{ #1 } }{ \csc^2{ #1 } - 1 } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcscsins/itptdcscsins
+% Math - Trig - Pythagorean Thereom - Csc in terms of Sin - Squared Form
+%
+%                1
+%   csc^2 a = -------
+%             sin^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcscsins }[1]{ \mtrcsc{ #1 }{ 2 } }
+\newcommand{ \itptdcscsins }[1]{ \itrcsc{ #1 }{ 2 } }
+
+
+% mtptdcscsinr/itptdcscsinr
+% Math - Trig - Pythagorean Thereom - Csc in terms of Sin - Root Form
+%
+%             1
+%   csc a = -----
+%           sin a
+%
+%   arg a: angle
+\newcommand{ \mtptdcscsinr }[1]{ \mtrcsc{ #1 }{ } }
+\newcommand{ \itptdcscsinr }[1]{ \itrcsc{ #1 }{ } }
+
+
+% mtptdcsccoss/itptdcsccoss
+% Math - Trig - Pythagorean Thereom - Csc in terms of Cos - Squared Form
+%
+%                  1
+%   csc^2 a = -----------
+%             1 - cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcsccoss }[1]{ \dfrac{ 1 }{ 1 - \cos^2{ #1 } } }
+\newcommand{ \itptdcsccoss }[1]{ \frac{ 1 }{ 1 - \cos^2{ #1 } } }
+
+
+% mtptdcsccosr/itptdcsccosr
+% Math - Trig - Pythagorean Thereom - Csc in terms of Cos - Root Form
+%
+%                  1
+%   csc a = ( ----------- )^(1/2)
+%             1 - cos^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcsccosr }[1]{ \bigg( \dfrac{ 1 }{ 1 - \cos^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcsccosr }[1]{ ( \frac{ 1 }{ 1 - \cos^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcsctans/itptdcsctans
+% Math - Trig - Pythagorean Thereom - Csc in terms of Tan - Squared Form
+%
+%             1 + tan^2 a
+%   csc^2 a = -----------
+%	            tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcsctans }[1]{ \dfrac{ 1 + \tan^2{ #1 } }{ \tan^2{ #1 } } }
+\newcommand{ \itptdcsctans }[1]{ \frac{ 1 + \tan^2{ #1 } }{ \tan^2{ #1 } } }
+
+
+% mtptdcsctanr/itptdcsctanr
+% Math - Trig - Pythagorean Thereom - Csc in terms of Tan - Root Form
+%
+%             1 + tan^2 a
+%   csc a = ( ----------- )^(1/2)
+%               tan^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcsctanr }[1]{ \bigg( \dfrac{ 1 + \tan^2{ #1 } }{ \tan^2{ #1 } } \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcsctanr }[1]{ ( \frac{ 1 + \tan^2{ #1 } }{ \tan^2{ #1 } } )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtptdcsccots/itptdcsccots
+% Math - Trig - Pythagorean Thereom - Csc in terms of Cot - Squared Form
+%
+%   csc^2 a = 1 + cot^2 a
+%
+%   arg a: angle
+\newcommand{ \mtptdcsccots }[1]{ 1 + \cot^2{ #1 }  }
+\newcommand{ \itptdcsccots }[1]{ \mtptdcsccots{ #1 }  }
+
+
+% mtptdcsccotr/itptdcsccotr
+% Math - Trig - Pythagorean Thereom - Csc in terms of Cot - Root Form
+%
+%   csc a = (1 + cot^2 a)^(1/2)
+%
+%   arg a: angle
+\newcommand{ \mtptdcsccotr }[1]{ (1 + \cot^2{ #1 } )^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcsccotr }[1]{ \mtptdcsccotr{ #1 } }
+
+
+% mtptdcscsecs/itptdcscsecs
+% Math - Trig - Pythagorean Thereom - Csc in terms of Sec - Squared Form
+%
+%               sec^2 a
+%   csc^2 a = -----------
+%             sec^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdcscsecs }[1]{ \dfrac{ \sec^2{ #1 } }{ \sec^2{ #1 } - 1} }
+\newcommand{ \itptdcscsecs }[1]{ \frac{ \sec^2{ #1 } }{ \sec^2{ #1 } - 1} }
+
+
+% mtptdcscsecr/itptdcscsecr
+% Math - Trig - Pythagorean Thereom - Csc in terms of Sec - Root Form
+%
+%               sec^2 a
+%   csc a = ( ----------- )^(1/2)
+%             sec^2 a - 1
+%
+%   arg a: angle
+\newcommand{ \mtptdcscsecr }[1]{ \bigg( \dfrac{ \sec^2{ #1 } }{ \sec^2{ #1 } - 1} \bigg)^{ \sfrac{ 1 }{ 2 } } }
+\newcommand{ \itptdcscsecr }[1]{ ( \frac{ \sec^2{ #1 } }{ \sec^2{ #1 } - 1} )^{ \sfrac{ 1 }{ 2 } } }
+
+
+% mtsinapb/itsinapb
+% Math - Trig - Sin - Addition of Two Angles
+%
+%   sin(a + b) = sin a cos b + cos a sin b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mtsinapb }[2]{ \sin{ #1 } \cos{ #2 } + \cos{ #1 } \sin{ #2 } }
+\newcommand{ \itsinapb }[2]{ \mtsinapb{ #1 }{ #2 } }
+
+
+% mtsinapb/itsinamb
+% Math - Trig - Sin - Subtraction of Two Angles
+%
+%   sin(a - b) = sin a cos b - cos a sin b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mtsinamb }[2]{ \sin{ #1 } \cos{ #2 } - \cos{ #1 } \sin{ #2 } }
+\newcommand{ \itsinamb }[2]{ \mtsinam{ #1 }{ #2 } }
+
+
+% mtcosapb/itcosapb
+% Math - Trig - Cos - Addition of Two Angles
+%
+%   cos(a + b) = cos a cos b - sin a sin b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mtcosapb }[2]{ \cos{ #1 } \cos{ #2 } - \sin{ #1 }  \sin{ #2 } }
+\newcommand{ \itcosapb }[2]{ \mtcosap{ #1 }{ #2 } }
+
+
+% mtcosamb/itcosamb
+% Math - Trig - Cos - Subtraction of Two Angles
+%
+%   cos(a + b) = cos a cos b - sin a sin b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mtcosamb }[2]{ \cos{ #1 } \cos{ #2 } + \sin{ #1 }  \sin{ #2 } }
+\newcommand{ \itcosamb }[2]{ \mtcosamb{ #1 }{ #2 } }
+
+
+% mttanapb/ittanapb
+% Math - Trig - Tan - Addition of Two Angles
+%
+%                 tan a + tan b
+%   tan(a + b) = ---------------
+%                1 - tan a tan b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mttanapb }[2]{ \dfrac{ \tan{ #1 } + \tan{ #2 } }{ 1 - \tan{ #1 } \tan{ #2 } } }
+\newcommand{ \ittanapb }[2]{ \frac{ \tan{ #1 } + \tan{ #2 } }{ 1 - \tan{ #1 } \tan{ #2 } } }
+
+
+% mttanamb/ittanamb
+% Math - Trig - Tan - Subtraction of Two Angles
+%
+%                 tan a - tan b
+%   tan(a + b) = ---------------
+%                1 + tan a tan b
+%
+%   arg a: angle a
+%   arg b: angle b
+\newcommand{ \mttanamb }[2]{ \dfrac{ \tan{ #1 } - \tan{ #2 } }{ 1 + \tan{ #1 } \tan{ #2 } } }
+\newcommand{ \ittanamb }[2]{ \frac{ \tan{ #1 } - \tan{ #2 } }{ 1 + \tan{ #1 } \tan{ #2 } } }
+
+
+% mtsinr/itsinr
+% Math - Trig - Sine Rule
+%
+%   sin^y x   sin^b a
+%   ------- = -------
+%     x^y       b^a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtsinr }[2]{ \dfrac{ \sin^{ #2 }{ #1 } }{ { #1 }^{ #2 } } }
+\newcommand{ \itsinr }[2]{ \frac{ \sin^{ #2 }{ #1 } }{ { #1 }^{ #2 } } }
+
+
+% mtsinri/itsinri
+% Math - Trig - Sine Rule Inverted
+%
+%     x^y       b^a
+%   ------- = -------
+%   sin^y x   sin^b a
+%
+%   arg a: angle
+%   arg b: exponent (leave empty if b = 1)
+\newcommand{ \mtsinri }[2]{ \dfrac{ { #1 }^{ #2 } }{ \sin^{ #2 }{ #1 } } }
+\newcommand{ \itsinri }[2]{ \frac{ { #1 }^{ #2 } }{ \sin^{ #2 }{ #1 } } }
+
+
+% mtcosrs/itcosrs
+% Math - Trig - Cosine Rule solved for Side
+%
+%   a^2 = b^2 + c^2 - 2bc cos d
+%
+%   arg b: side b
+%   arg c: side c
+%   arg d: angle between sides b and c
+\newcommand{ \mtcosrs }[3]{ { #1 }^2 + { #2 }^2 - 2{ #1 }{ #2 } \,\cos{ #3 } }
+\newcommand{ \itcosrs }[3]{ \mtcosrs{ #1 }{ #2 }{ #3 } }
+
+
+% mtcosrs/itcosrs
+% Math - Trig - Cosine Rule solved for Angle
+%
+%            b^2 + c^2 - a^2
+%   cos d =  ---------------
+%                  2bc
+%
+%   arg a: side a
+%   arg b: side b
+%   arg c: side c
+\newcommand{ \mtcosra }[3]{ \dfrac{ { #2 }^2 + { #3 }^2 - { #1 }^2 }{ 2{ #2 }{ #3 } } }
+\newcommand{ \itcosra }[3]{ \frac{ { #2 }^2 + { #3 }^2 - { #1 }^2 }{ 2{ #2 }{ #3 } } }
