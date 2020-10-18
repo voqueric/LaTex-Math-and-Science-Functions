@@ -1,6 +1,14 @@
 # LaTex-Math-and-Science-Functions
+1. Place files into the final destination directory on your system.
+2. Open 00--Science_and_Math.tex
+3. Locate these two lines, and change the folder in each to the final destination directory for each operating system:
 
-Use the following line within the document preamble to determine if compilation takes place in a Linux operating system or Windows operating system:
+```
+\newcommand{ \mylinuxlatexmathpath }[0]{/linux/path/to/file}
+\newcommand{ \mywinlatexmathpath }[0]{C:/windows/path/to/file}
+```
+4. Close and save file.
+5. Add the following line within the document preamble to determine if compilation takes place within a Linux operating system or Windows operating system:
 
 ```
 \documentclass[letterpaper,10pt]{article}
