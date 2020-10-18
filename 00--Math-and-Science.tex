@@ -35,6 +35,12 @@
 %
 % This file must be loaded prior to loading other files contained in the
 % https://github.com/voqueric/LaTex-Math-and-Science-Functions repository.
+% 
+% After installation change the following lines so that this file conducts its
+% imports propery.  Do NOT put a final '/' character after the last sub-directory name
+
+\newcommand{ \mylinuxlatexmathpath }[0]{/linux/path/to/file}
+\newcommand{ \mywinlatexmathpath }[0]{C:/windows/path/to/file}
 
 
 
@@ -106,6 +112,9 @@
 
 
 
+\usepackage{siunitx}				% Comprehensive SI units package
+% https://www.ctan.org/pkg/sinuitx
+
 % Documentation for Martin Hensel packages
 \usepackage[version=3]{mhchem}			% Chemical and molecular formulae and equations
 % https://www.ctan.org/pkg/mhchem
@@ -143,33 +152,33 @@
 % LOAD FUNCTIONS
 % ==========
 % Lower-level documents are divided by function types for ease of editing
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/10--Algebra.tex}%
+\InputIfFileExists{\mylinuxlatexmathpath/10--Algebra.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/10--Algebra.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/11--Geometry.tex}%
+	{\input{\mywinlatexmathpath/10--Algebra.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/11--Geometry.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/11--Geometry.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/12--Trigonometry.tex}%
+	{\input{\mywinlatexmathpath/11--Geometry.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/12--Trigonometry.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/12--Trigonometry.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/13--Calculus.tex}%
+	{\input{\mywinlatexmathpath/12--Trigonometry.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/13--Calculus.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/13--Calculus.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/14--Vector.tex}%
+	{\input{\mywinlatexmathpath/13--Calculus.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/14--Vector.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/14--Vector.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/20--Metrology.tex}%
+	{\input{\mywinlatexmathpath/14--Vector.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/20--Metrology.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/20--Metrology.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/30--Physics.tex}%
+	{\input{\mywinlatexmathpath/20--Metrology.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/30--Physics.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/30--Physics.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/31--Geophysics.tex}%
+	{\input{\mywinlatexmathpath/30--Physics.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/31--Geophysics.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/31--Geophysics.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/40--Chemistry.tex}%
+	{\input{\mywinlatexmathpath/31--Geophysics.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/40--Chemistry.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/40--Chemistry.tex}}
-\InputIfFileExists{/mnt/01--DATA/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/50--Programming.tex}%
+	{\input{\mywinlatexmathpath/40--Chemistry.tex}}
+\InputIfFileExists{\mylinuxlatexmathpath/50--Programming.tex}%
 	{}%
-	{\input{E:/02--RESEARCH/00--LATEX/00--TEMPLATES/math-and-science/50--Programming.tex}}
+	{\input{\mywinlatexmathpath/50--Programming.tex}}
